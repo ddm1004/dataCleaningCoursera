@@ -63,10 +63,9 @@ After this, the columns names are moved to all lower case and the periods are re
 
 The data is then melted into a new table, in whcih the sensor columns are combined into two columns, one for the sensor name and another for the reading.
 
-The data is then cast back such that for the mean of every sensor reading for each subject and activity is given.
-
 Finally, the melted data and the sensor mean data is written out to csv files so that the data can be used in either via further R processing or via other processing mechanisms.
 
+The sensor mean data is also written to a text file.
 ## Variables
 
 Two key variables exist at teh end of processing, along with several intermediate variables. 
@@ -78,12 +77,12 @@ Two key variables exist at teh end of processing, along with several intermediat
  * __tidy_data__: Data from that combines the activity, subject, and sensor readings.  All sensor names are all lower case with periods removed from the data to simplify access to the columns.
 
 ### Final Variables
-  * __melt_data__: There are four columns, subject, activity, sensor, and reading.  The subject and activity columns are taken directly from the data set, with the subject being a number and the activity being one of LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, or WALKING_UPSTAIRS.  The sensor column represents the sensor that is being read, while the reading column represents the sensor value read.  Units are the same as _X_
- * __sensor_means__: There are also four columns.  The first three are the same as _melt_data_, while the fourth is the mean reading of the given sensor for the given individual and activity. 
+  * __melt_data__: There are 88 columns, subject, activity, and the sensor names.  The subject and activity columns are taken directly from the data set, with the subject being a number and the activity being one of LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, or WALKING_UPSTAIRS.  The sensor columns represents the values read from the sensor.  Units are the same as _X_
+ * __sensor_means__: There are also 88 columns.  The first two are the same as _melt_data_, while the remainder are the mean reading of the given sensor for the given individual and activity. 
 
 ## Output Files
 
-Two files are output from the script, tidy_data.csv and sensor_means.csv.
+Three files are output from the script, sensor_means.txt, tidy_data.csv and sensor_means.csv.
 
  *__tidy_data.csv__: There are four columns, subject, activity, sensor, and reading.  The subject and activity columns are taken directly from the data set, with the subject being a number and the activity being one of LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, or WALKING_UPSTAIRS.  The sensor column represents the sensor that is being read, while the reading column represents the sensor value read.  Units are 
 

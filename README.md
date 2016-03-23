@@ -31,7 +31,7 @@ From within R, execute the following code.
 
 `source("run_analysis.R")`
 
-It will create the required data directory and download the needed data files.  Within  the data directory it will create two new files, data/tidy\_data.csv and sensor\_means.csv, represnting the output.  The data will also exist within R in teh `melt_data` and `sensor_means` variables.
+It will create the required data directory and download the needed data files.  Within  the data directory it will create three new files, sensor_means.txt, data/tidy\_data.csv and sensor\_means.csv, represnting the output.  The data will also exist within R in teh `melt_data` and `sensor_means` variables.
 
 ## Internals
 
