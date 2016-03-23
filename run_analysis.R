@@ -46,7 +46,6 @@ data_names <- names(select(tidy_data,-activity, -subject))
 melt_data <- melt(tidy_data,id=c("subject","activity"),measure.vars=data_names, value.name="reading")
 colnames(melt_data)[3] <- "sensor"
 sensor_means <- dcast(melt_data,subject+activity ~ sensor, mean)
-sensor_means <- melt(sensor_means, id=c("subject","activity"), measure.vars=data_names, value.name="mean")
 colnames(sensor_means)[3] <- "sensor"
 write.csv(melt_data, file="./data/tidy_data.csv")
 
