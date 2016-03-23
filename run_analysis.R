@@ -51,4 +51,4 @@ colnames(sensor_means)[3] <- "sensor"
 write.csv(melt_data, file="./data/tidy_data.csv")
 
 write.csv(sensor_means, file="./data/sensor_means.csv")
-
+write.table(sensor_means, file="sensor_means.txt", row.names=FALSE)
